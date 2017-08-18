@@ -134,6 +134,8 @@ public class Main
             jdaBuilder.addEventListener(help.registerCommand(new InfoCommand()));
             jdaBuilder.addEventListener(help.registerCommand(new UptimeCommand()));
             jdaBuilder.addEventListener(help.registerCommand(new GeneralCommand()));
+            jdaBuilder.addEventListener(help.registerCommand(new InteractiveCommand()));
+            jdaBuilder.addEventListener(help.registerCommand(new NoireCommand()));
 
             //Audio stuff
             jdaBuilder.addEventListener(new PlayerControl());

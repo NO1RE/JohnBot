@@ -24,6 +24,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.TreeMap;
 
 public class HelpCommand extends Command
@@ -50,9 +51,19 @@ public class HelpCommand extends Command
     {
         if(!e.isFromType(ChannelType.PRIVATE))
         {
+        	String[] arrayAppend = {" Ya fucking cunt don't even know how to operate me? Sod off!",
+        			" Hey look at this nigga begging for help operating a bot!",
+        			" Lmao look at this fagget!",
+        			" Ask Noire instead lol. Got no time dealing with your lame ass",
+        			" Dare asking the president? I'll deport you to Uganda.",
+        			" Suck my dick.",
+        			" What now you massive cock.",
+        			" You ded.",
+        			" Okay I give the commands. Just fuck off after."};
+        	int rnd = new Random().nextInt(arrayAppend.length);
             e.getTextChannel().sendMessage(new MessageBuilder()
                     .append(e.getAuthor())
-                    .append(": ya fucking cunt don't even know how to operate me? Sod off!")
+                    .append(arrayAppend[rnd])
                     .build()).queue();
         }
         sendPrivate(e.getAuthor().openPrivateChannel().complete(), args);
@@ -61,7 +72,12 @@ public class HelpCommand extends Command
     @Override
     public List<String> getAliases()
     {
-        return Arrays.asList(".help", ".commands");
+        return Arrays.asList(".help", 
+        		".commands", 
+        		"@John Fitzgerald Help", 
+        		"@John Fitzgerald Help me",
+        		"@John Fitzgerald help",
+        		"@John Fitzgerald help me");
     }
 
     @Override
@@ -102,7 +118,7 @@ public class HelpCommand extends Command
             }
 
             channel.sendMessage(new MessageBuilder()
-                    .append("The following commands are supported by the bot\n")
+                    .append("Use these fagget\n")
                     .append(s.toString())
                     .build()).queue();
         }

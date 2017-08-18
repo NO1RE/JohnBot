@@ -28,11 +28,11 @@ public class ReloadCommand extends Command
     @Override
     public void onCommand(MessageReceivedEvent e, String[] args)
     {
-        if (!Permissions.getPermissions().isOp(e.getAuthor()))
+        /*if (!Permissions.getPermissions().isOp(e.getAuthor()))
         {
             sendMessage(e, Permissions.OP_REQUIRED_MESSAGE);
             return;
-        }
+        }*/
 
         sendMessage(e, "Restarting the bot, one moment...");
         System.exit(Main.RESTART_EXITCODE);
